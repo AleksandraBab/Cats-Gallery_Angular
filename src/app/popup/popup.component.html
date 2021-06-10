@@ -1,0 +1,44 @@
+<button
+  type="button"
+  class="popup__close-btn"
+  (click)="popupService.closePopup()"
+></button>
+<div class="popup__container">
+  <img
+    class="popup__img"
+    [src]="popupService.card.link"
+    [alt]="popupService.card.title">
+  <div class="popup__about">
+    <h2 class="popup__title">{{popupService.card.title}}</h2>
+    <div class="popup__rate">
+      <p class="popup__count">{{popupService.card.isLiked ? '1' : '0'}}</p>
+      <button
+        type="button"
+        class="popup__like-btn"
+        [class.popup__like-btn_liked]="popupService.card.isLiked"
+        (click)="popupService.likeCard()"
+      ></button>
+    </div>
+  </div>
+  <form
+    class="popup__form"
+    (submit)="createComment($event)"
+  >
+    <h3 class="popup__head">Оставьте комменатарий</h3>
+    <textarea
+      class="popup__input"
+      name="comment-text"
+      [(ngModel)]='value'
+    ></textarea>
+    <button type="submit" class="popup__sbmt-btn">Отправить</button>
+  </form>
+  <div class="popup__comments">
+    <h3 class="popup__heading">Комментарии</h3>
+    <app-comment
+      *ngFor="let comment of popupService.card.comments"
+      [comment]="comment"
+      class="popup__comment">
+    </app-comment>
+  </div>
+</div>
+

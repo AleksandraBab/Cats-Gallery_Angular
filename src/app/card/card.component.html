@@ -1,0 +1,14 @@
+<img
+  class="item__img"
+  src={{card.link}}
+  alt={{card.title}}
+
+>
+<div
+  class="item__overlay"
+  (click)="popupService.openPopup(this.card)"
+>
+  <p class="item__name">{{card.title}}</p>
+</div>
+
+

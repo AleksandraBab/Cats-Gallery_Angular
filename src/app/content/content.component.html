@@ -1,0 +1,10 @@
+<section class="gallery content__section">
+  <h1 class="gallery__heading">{{heading}}</h1>
+  <ul class="gallery__list">
+    <li
+      class="item"
+      *ngFor="let item of cards"
+      [card]="item"
+    ></li>
+  </ul>
+</section>

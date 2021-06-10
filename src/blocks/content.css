@@ -1,0 +1,44 @@
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 200px);
+  max-width: 1600px;
+}
+
+.content__section {
+  margin: 40px auto;
+}
+
+.forms {
+  margin: 60px 0 40px;
+  align-self: flex-start;
+  width: 70%;
+}
+
+.comments {
+  align-self: flex-start;
+  width: 70%;
+
+}
+
+.comments:last-child {
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    width: calc(100% - 120px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    width: calc(100% - 30px);
+  }
+
+  .content__section {
+    margin: 30px auto;
+  }
+}
